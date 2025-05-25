@@ -19,7 +19,10 @@
     <section id="user-goal">
       <h2>My Course Goal</h2>
       <p>{{ outputGoal() }}</p>
-      <p>This course is awesome!. Get more detail on <a v-bind:href="vueLink">Here</a></p>
+      <p>
+        This course is awesome!. Get more detail on
+        <a v-bind:href="vueLink">Here</a>
+      </p>
     </section>
 
     <header>
@@ -31,10 +34,14 @@
       <button v-on:click="reduce">Reduce</button>
       <p>Result : {{ counter }}</p>
       <!-- $event is default behavior of javascript that containt many information including the value of the input -->
-      <input type="text" v-on:input="setName($event, 'hidayat')" >
+      <input
+        type="text"
+        v-on:input="setName($event, 'hidayat')"
+        v-on:keyup.enter="confirmName"
+      />
       <p>Name : {{ name }}</p>
-      <form v-on:submit="submitForm">
-        <input type="text">
+      <form v-on:submit.prevent="submitForm">
+        <input type="text" />
         <button type="submit">Submit</button>
       </form>
     </section>

@@ -26,23 +26,23 @@ const appEvent = Vue.createApp({
         return {
             counter : 0,
             name: '',
+            confirmName: '',
         };
     },
     methods: {
-        submitForm(event){
-            event.preventDefault(); //this can be change by vue default call like
+        confirmName(){
+            this.confirmName = this.name;  
+        },
+        submitForm(){
+            // event.preventDefault(); //this can be change by vue default call
             alert(this.name);
         },
+        
         //event arguments below are default behavior in javascript
         //vue just use the behavior to modification the value
         setName(event, lastName) {
             this.name = event.target.value + ' ' + lastName;
         },
-        /**
-         * Add 1 to the counter.
-         */
-/*************  ✨ Windsurf Command ⭐  *************/
-/*******  c2e74a8d-4233-401f-937e-3a56b4bba12d  *******/
         add() {
             this.counter += 1;
         },
