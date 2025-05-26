@@ -34,12 +34,13 @@
       <button v-on:click="reduce">Reduce</button>
       <p>Result : {{ counter }}</p>
       <!-- $event is default behavior of javascript that containt many information including the value of the input -->
+      <!-- v-model is just a shortcut for v-on:input and v:bind -->
       <input
         type="text"
         v-on:input="setName($event, 'hidayat')"
-        v-on:keyup.enter="confirmName"
+        v-on:keyup.enter="setConfirmName"
       />
-      <p>Name : {{ name }}</p>
+      <p>Name : {{ fullname }}</p>
       <form v-on:submit.prevent="submitForm">
         <input type="text" />
         <button type="submit">Submit</button>

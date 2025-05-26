@@ -26,11 +26,21 @@ const appEvent = Vue.createApp({
         return {
             counter : 0,
             name: '',
+            lastName: '',
             confirmName: '',
         };
     },
+    computed: {
+        fullname() {
+            if (this.name === '' || this.lastName === '') {
+                return '';
+            } else {
+                return this.name + ' ' + this.lastName;
+            }
+        }
+    },
     methods: {
-        confirmName(){
+        setConfirmName(){
             this.confirmName = this.name;  
         },
         submitForm(){
